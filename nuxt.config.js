@@ -1,4 +1,5 @@
 export default {
+    target: 'server',
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'ultimate-nuxt-template',
@@ -21,6 +22,17 @@ export default {
         '@/assets/style/tailwind.css'
     ],
 
+    // Nuxt image config
+    image: {
+        domains: [
+            'images.unsplash.com',
+            'nuxtjs.org'
+        ],
+        alias: {
+            unsplash: 'https://images.unsplash.com'
+        }
+    },
+
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
 
@@ -32,11 +44,14 @@ export default {
         // https://go.nuxtjs.dev/typescript
         '@nuxt/typescript-build',
         '@nuxt/postcss8',
-        '@nuxtjs/composition-api/module'
+        '@nuxtjs/composition-api/module',
+        'nuxt-vite'
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: [],
+    modules: [
+        '@nuxt/image'
+    ],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
